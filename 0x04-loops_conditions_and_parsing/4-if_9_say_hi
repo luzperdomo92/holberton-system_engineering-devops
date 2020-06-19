@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script is displaying a string 10 times. in 9th pocision display hi 
+# but for the 9th iteration, displays "Holberton School"
+# and then Hi on a new line.
+counter=0
+while [ $counter -lt 11 ]
+do
+    if [ $counter = 9 ]
+    then
+        echo "Hi"
+    else
+        echo "Holberton School"
+    fi
+    ((counter++))
+done
