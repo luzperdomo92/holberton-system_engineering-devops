@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This script is displaying diferents strings in 
+# a differentes positions in a loop for 10 times. 
+counter=0
+while [ $counter -lt 10 ]
+do
+    if [ $counter = 3 ]
+    then
+        echo "bad luck"
+    elif [ $counter = 7 ]
+    then
+        echo "good luck"
+    else
+        echo "Holberton School"
+    fi
+    ((counter++))
+done
