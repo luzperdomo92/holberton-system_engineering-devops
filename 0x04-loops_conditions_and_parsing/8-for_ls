@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This scrip is displaying the content of
+# the current directory in a list format
+
+for items in *
+do 
+    echo "$items" | cut -d'-' -f2
+done
