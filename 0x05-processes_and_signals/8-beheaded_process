@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# this script kill the last process
+# using SIGTERM
+
+pkill -9 -f 7-highlander
