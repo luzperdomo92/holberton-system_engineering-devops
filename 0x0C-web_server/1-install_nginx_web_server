@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 # Install nginx on your web-01 server.
+
 sudo apt-get update
 sudo apt-get -y install nginx
+# you can check the list of avalable aplications
+# with sudo ufw app list.
+#choose the port listening ('Nginx HTTP'opens only port 80)
 sudo ufw allow 'Nginx HTTP'
-echo 'Holberton School for the win!' > /var/www/html/index.html
+# create the file index.html and give it the permissions 
+# like 754 (rwx r-x r--)
+echo 'Holberton School' > /var/www/html/index.html
 sudo service nginx restart
