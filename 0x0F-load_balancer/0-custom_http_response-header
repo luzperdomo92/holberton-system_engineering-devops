@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# configure new server
+# Install nginx on the  web-02 server.
+apt-get update
+apt-get -y install nginx
+echo "Holberton School" > /var/www/html/index.html
+sed -i '/root \/var\/www\/html;/a location /redirect_me { rewrite ^ https://www.youtube.com/watch?v=uDrdZM1iGrc permanent; }' /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+sed -i '/root \/var\/www\/html;/a error_page 404 /custom_404.html; location = /custom_404.html { root /var/www/html; internal; }' /etc/nginx/sites-available/default
+sed -i "/server_name _;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
+
+service nginx start
