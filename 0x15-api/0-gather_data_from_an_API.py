@@ -18,9 +18,9 @@ todos = res_todo.json()
 tasks = []
 for task in todos:
     if task["completed"] is True:
-        tasks.append(task["title"])
-print("Employee {} is done with tasks({}/{}):".format(users["name"],
+        tasks.append(task.get("title")
+print("Employee {} is done with tasks({}/{}):".format(users.get("name"),
       len(tasks), len(todos)))
 
 for task in tasks:
-    print("     {}".format(task))
+    print("\t {}".format(task))
