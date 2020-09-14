@@ -19,7 +19,7 @@ tasks = []
 for task in todos:
     if task["completed"] is True:
         tasks.append(task["title"])
-print("Employee {} is done with tasks {}/{}:".format(users["name"], 
+print("Employee {} is done with tasks {}/{}:".format(users["name"],
       len(tasks), len(todos)))
 
 for task in tasks:
