@@ -25,6 +25,6 @@ if __name__ == "__main__":
         tasks_list.append(task_dict)
 
     dict_to_json = {}
-    dict_to_json["user_id"] = tasks_list
+    dict_to_json[user_id] = tasks_list
     with open("{}.json".format(user_id), 'w') as json_file:
         json.dump(dict_to_json, json_file)
