@@ -23,4 +23,4 @@ print("Employee {} is done with tasks ({}/{}):".format(users["name"],
       len(tasks), len(todos)))
 
 for task in tasks:
-    print("\t {}".format(task))
+    print("     {}".format(task))
