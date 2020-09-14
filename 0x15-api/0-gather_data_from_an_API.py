@@ -10,7 +10,7 @@ if __name__ == "__main__":
 id = int(sys.argv[1])
 res_user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                         .format(id))
-res_todo = requests.get("https://jsonplaceholder.typicode.com/todos?usersId={}"
+res_todo = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}"
                         .format(id))
 users = res_user.json()
 todos = res_todo.json()
