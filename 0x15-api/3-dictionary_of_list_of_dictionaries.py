@@ -20,7 +20,7 @@ if __name__ == "__main__":
         user_id = users.get("id")
         user_dict[user_id] = []
         user_name_dict[user_id] = users.get("username")
-           
+
     for task in todo:
         task_dict = {}
         user_id = task.get("userId")
