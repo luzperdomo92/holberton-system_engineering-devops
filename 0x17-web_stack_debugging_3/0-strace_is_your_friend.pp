@@ -1,6 +1,6 @@
 # fix 500 error
-file_line { 'Exec file':
-  path  => '/var/www/html/wp-settings.php',
-  line  => 'require_once( ABSPATH . WPINC . "/class-wp-locale.php" );',
-  match => 'phpp'
+exec {'fix500':
+  command => 'sed -i "s|require_once( ABSPATH . WPINC . \'/class-wp-locale.phpp\' );\
+|require_once( ABSPATH . WPINC . \'/class-wp-locale.php\' );|g" /var/www/html/wp-settings.php',
+  path    => '/bin/:/sbin/:/usr/bin/:/usr/sbin/'
 }
