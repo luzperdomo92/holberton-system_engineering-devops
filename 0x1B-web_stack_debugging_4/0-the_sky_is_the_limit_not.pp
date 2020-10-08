@@ -1,8 +1,10 @@
-exec { '/etc/default/nginx':
-  command  => "echo 'ULIMIT=\"-n 4096\"' > /etc/default/nginx",
-  provider => 'shell'
+exec {'increase max open files limit':
+  command => 'sed -i "s|15|15000|g" /etc/default/nginx',
+  path    => '/bin/:/sbin/:/usr/bin/:/usr/sbin/'
 }
--> exec { 'Restart Nginx':
-  command  => 'sudo service nginx restart',
-  provider => 'shell'
+
+exec {'restart nginx':
+  require => Exec['increase max open files limit'],
+  command => 'sudo service nginx restart',
+  path    => '/bin/:/sbin/:/usr/bin/:/usr/sbin/'
 }
